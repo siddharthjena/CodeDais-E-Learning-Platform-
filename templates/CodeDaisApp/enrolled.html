@@ -1,0 +1,31 @@
+{% extends 'CodeDaisApp/dash_base.html' %}
+{% load static %}
+{% block body_block %}
+    <div style="font-size: 60px; font-family: 'Times New Roman', Times, serif;text-align: center;">
+        Enrolled Courses
+    </div>
+    {% if enrolled_courses %}
+
+            <div class="  text-center">
+            <div class="row">
+            {% for enrollment in enrolled_courses %}
+            <div class="col" style="padding-bottom: 40px;">
+                
+                    <div class="card" style="width: 25rem; height: 22rem;">
+                        <img src="{{ enrollment.course.image.url }}" class="card-img-top" alt="..." height="200px">
+                        <div class="card-body" style="background-color: rgb(253, 249, 248);">
+                            <p class="card-text"><b>{{ enrollment.course.name }}</b><br>By Surendra Kumar Panda</p>
+                            <br>
+                            <img src="{% static 'images/rs.png' %}" alt="" height="20px" width="20px">{{ enrollment.course.price }}
+                        </div>
+                    </div>
+        
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+       
+    {% else %}
+        <p>No courses enrolled.</p>
+    {% endif %}
+{% endblock %}

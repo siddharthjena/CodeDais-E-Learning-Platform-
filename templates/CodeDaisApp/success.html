@@ -1,0 +1,11 @@
+<!doctype html>
+{% extends 'CodeDaisApp/base.html' %}
+{% load static %}
+{% block body_block %}
+<div style="background-color: rgb(18, 18, 18);; height: 800px;">
+    <div  style="padding-top: 80px;color: rgb(255, 255, 255);padding-left: 400px;font-size: 30px;">
+        <img src="{% static 'images/head.png' %}" alt="" height="100px" width="120px"> Congratulations!! You have successfully registered with codedais... 
+            <a href="{% url 'login' %}"><button type="button" class="btn btn-primary">login</button></a></h3>
+      </div>
+</div>
+{% endblock %}

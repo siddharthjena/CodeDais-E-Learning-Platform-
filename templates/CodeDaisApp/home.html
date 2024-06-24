@@ -1,0 +1,123 @@
+<!doctype html>
+{% extends 'CodeDaisApp/base.html' %}
+{% load static %}
+{% block body_block %}
+
+<div>
+  <div class="">
+    <div class="row">
+      <div class="col-6" style="background-color: rgb(18, 18, 18);" >
+       <div style="padding-bottom: 30px;">
+        <img src="{% static 'images/code_dais.png' %}" alt="" width="800px">
+       </div>
+      </div>
+      <div class="col-6" style="background-color: rgb(18, 18, 18);">
+        <div style="padding-top: 70px;">
+          <div style="font-size: 110px;font-family:'Times New Roman', Times, serif; color: rgb(154, 148, 148);padding-left: 300px;">
+            Learn at  <br> <p style="font-size: 40px;"> the comfort of </p>your own  <br> home 
+            
+              <a href="#offerings"><button type="button" class="btn btn-warning" style="width: 200px; font-size: 20px; border-radius: 20px;"><b>Explore Offerings</b></button></a>
+           
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+     
+</div>
+<div style="height: 100px;background-color: azure; text-align: center; color: rgb(118, 114, 114);padding-bottom: 20px;">
+      
+          <h1 id="offerings" style="font-family:'Times New Roman', Times, serif; font-size: 100px;padding-bottom: 20px;">OFFERINGS</h1>
+       
+</div>
+<div style="padding-top: 60px;padding-left: 50px;padding-bottom: 100px;background-color: azure;">
+  <div class="  text-center">
+    <div class="row">
+      {% for course in courses %}
+      <div class="col" style="padding-bottom: 40px;">
+      <a href="{% url 'buy_course' course.id %}" style="text-decoration: none; color: inherit;">
+          <div class="card" style="width: 25rem; height: 22rem;">
+              <img src="{{ course.image.url }}" class="card-img-top" alt="..." height="200px">
+              <div class="card-body" style="background-image: linear-gradient(90deg,rgb(233, 225, 245),white);">
+                  <p class="card-text"><b>{{ course.name }}</b><br>By Surendra Kumar Panda</p>
+                  <br>
+                  <img src="{% static 'images/rs.png' %}" alt="" height="20px" width="20px">{{ course.price }}
+              </div>
+          </div>
+      </a>
+      </div>
+  {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+<div style="height: 100px;background-color: rgb(12, 12, 12); text-align: center; color: rgb(141, 136, 136);padding-bottom: 20px;">
+      
+  <h1 id="offerings" style="font-family:'Times New Roman', Times, serif; font-size: 100px;padding-bottom: 20px;">Who We Are</h1>
+
+</div>
+
+<div style="padding-top: 60px;padding-left: 140px;padding-right: 100px;padding-bottom: 100px;background-color: rgb(12, 13, 13); color: rgb(141, 136, 136);;text-align: justify;">
+  <div id="about" >
+    <h1 style="padding-left: 600px;font-family: 'Times New Roman', Times, serif;"><b>About Code Dais </b><img src="{% static 'images/head.png' %}" alt="" height="50px" width="60px"></h1>
+    <p style="font-size: 20px;">Welcome to Code Dais, your gateway to the exciting world of technology! At Code Dais, we are passionate about empowering students to build their careers in the tech industry. Our platform offers a comprehensive learning experience that combines cutting-edge technology education with the convenience of remote classes, allowing you to learn from the comfort of your home.</p>
+
+    <div style="padding-top: 10px;">
+    <h2  style="padding-left: 670px;font-family: 'Times New Roman', Times, serif;""><b>Our Mission</b> <img src="{% static 'images/mission.png' %}" alt="" height="60px" width="60px"></h2>
+    <p style="font-size: 20px;">Our mission is to make high-quality tech education accessible to everyone. Whether you're a beginner just starting your journey or a seasoned professional looking to expand your skills, Code Dais provides the resources and support you need to succeed. We believe that technology can transform lives, and we're here to guide you every step of the way.</p>
+    </div>
+
+    <div style="padding-top: 15px;">
+      <h2  style="padding-left: 645px;font-family: 'Times New Roman', Times, serif;""><b>What We Offer </b><img src="{% static 'images/offer.png' %}" alt="" height="60px" width="60px"></h2>
+    
+        <p style="font-size: 20px;"><b>Remote Classes</b> : Learn at your own pace with our flexible remote classes. Our expert instructors are dedicated to providing personalized guidance and support, ensuring you get the most out of your learning experience.</p>
+        <p style="font-size: 20px;"><b>Comprehensive Curriculum</b> : Our courses cover a wide range of topics, from foundational programming languages to advanced concepts in software development, data science, and cybersecurity.</p>
+        <p style="font-size: 20px;"><b>Regular Evaluations</b> : We are committed to your growth. Our regular assessments and feedback sessions help you track your progress, identify areas for improvement, and stay motivated on your learning journey.</p>
+        <p style="font-size: 20px;"><b>Community Support</b> : Join a vibrant community of like-minded learners and professionals. Share your experiences, collaborate on projects, and build lasting connections.</p>
+    
+    </div>
+
+    <h2  style="padding-left: 678px;font-family: 'Times New Roman', Times, serif;""><b>Our Vision</b> <img src="{% static 'images/vision.png' %}" alt="" height="80px" width="80px"></h2>
+    <p style="font-size: 20px;">At Code Dais, we envision a world where everyone has the opportunity to thrive in the tech industry. We are constantly evolving our curriculum to stay ahead of industry trends and ensure that our students are equipped with the skills they need to succeed in a rapidly changing world. Our focus on continuous improvement and innovation means that you can always expect the best from us.</p> <br>
+
+    <p style="font-size: 20px; padding-left: 70px;"><b>Join Code Dais today and take the first step towards a brighter future in technology. Your success is our mission, and we can't wait to see what you'll achieve!</b></p>
+</div>
+</div>
+
+<div style="height: 690px;background-color: azure; text-align: center; color: rgb(73, 70, 70);padding-bottom: 20px;">
+      
+
+  <div class="text-center">
+    <div class="row">
+      <div class="col" style="padding-top: 70px;padding-bottom: 70px;">
+
+        <div style="padding-left: 180px;">
+          <div class="card" style="width: 35rem;height: 35rem;border-radius: 20px;background-image:linear-gradient(90deg,rgb(239, 237, 235),rgb(131, 126, 126));">
+            <div class="card-body" style="font-family: 'Times New Roman', Times, serif;">
+              <h1 class="card-title" style="font-size: 40px;">Meet Our Founder</h1>
+              <p style="font-size: 20px; padding-top: 30px;text-align: justify;"><b>Mr. Surendra Kumar Panda </b>is a distinguished Research Scholar (PhD) in Artificial Intelligence & Machine Learning, specializing in Medical Image Analysis, at C V Raman Global University, Bhubaneswar. With over seven years of experience in teaching and career development in the technology sector, Dr. He has made significant contributions to the field and has been instrumental in guiding numerous students towards successful careers in tech.
+
+                Driven by a passion for education and innovation, He founded Code Dais to provide a comprehensive learning platform that bridges the gap between theoretical knowledge and practical application. Their expertise and dedication ensure that Code Dais continually evolves to meet the demands of the ever-changing tech landscape, empowering students to achieve their highest potential.</p>
+            </div> 
+          </div>
+        </div>
+        
+      </div>
+      <div class="col" style="padding-top: 120px;">
+        <img src="{% static 'images/sir.png' %}" alt="" height="300px" width="300px" style="border-radius: 50%;">
+        <p style="font-size: 40px;font-family: 'Times New Roman', Times, serif;">Mr. Surendra  Kumar  Panda</p>
+        <div style="padding-left: 20px;">
+          <img src="{% static 'images/linkedin.png' %}" alt="" height="60px" width="60px"> <a href="https://www.linkedin.com/in/surendrapanda" style="color: rgb(0, 0, 0);">www.linkedin.com/in/surendrapanda</a>
+        </div>
+    </div>
+  </div>
+ </div>
+
+
+
+
+    
+{% endblock %}

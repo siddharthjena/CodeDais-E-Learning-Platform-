@@ -1,0 +1,37 @@
+<!doctype html>
+{% extends 'CodeDaisApp/base.html' %}
+{% block body_block %}
+
+<div  style="padding-top: 100px;padding-bottom: 300px;padding-left: 680px; background-color: azure;">
+
+  <div class="card" style="width: 30rem;border-radius: 20px;">
+    <div style="background-color: blueviolet;color: whitesmoke;text-align: center;border-top-left-radius: 20px;border-top-right-radius: 20px;">
+      <H2>Confirm here</H2>
+    </div>
+    <div class="card-body">
+      <p style="font-size: 30px;font-family: 'Times New Roman', Times, serif;">Are you sure you want to buy {{ course.name }} for rs{{ course.price }}?</p>
+      <form method="post">
+        {% csrf_token %}
+        <div class="text-center">
+          <div class="row">
+            <div class="col" style="padding-left: 40px;padding-top: 20px;">
+              <button type="submit" class="btn btn-success" style="border-radius: 20px;">Confirm </button>
+            </div>
+            <div class="col" style="padding-top: 20px;">
+              <a href="{% url 'home' %}" class="btn btn-danger" style="border-radius: 20px;" >Cancel</a>
+            </div>
+          </div>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

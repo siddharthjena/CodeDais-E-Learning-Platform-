@@ -1,0 +1,30 @@
+{% extends 'CodeDaisApp/dash_base.html' %}
+{% load static %}
+{% block body_block %}
+
+<div  style="padding-top: 20px;">
+    <div class="card" style="width: 1500px;height: 410px; border-radius: 30px; background-color: azure;">
+        <div class="card-body">
+            <div class=" text-center">
+                <div class="row">
+                  <div class="col">
+                    <div style="padding-top: 90px;">
+                        <p style="font-size: 70px; font-family: 'Times New Roman', Times, serif;">Welcome, {{ user.first_name }} {{ user.last_name }}</p><p style="font-size: 30px; font-family: 'Times New Roman', Times, serif;">Unlock your potential at Code Dais</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div >
+                        <img src="{% static 'images/home.png' %}" alt="">
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+
+
+
+
+
+{% endblock %}
