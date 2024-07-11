@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.core.validators import validate_image_file_extension
+from django.core.validators import validate_image_file_extension,URLValidator
 
 
 
@@ -10,7 +10,7 @@ class Course(models.Model):
     name = models.CharField(max_length=200)
     image = models.ImageField(upload_to='course_images/',validators=[validate_image_file_extension])
     price = models.DecimalField(max_digits=10, decimal_places=2)
-
+    link = models.URLField(max_length=200, validators=[URLValidator()], blank=True, null=True)
     def __str__(self):
         return self.name
     
